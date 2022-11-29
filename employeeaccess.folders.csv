@@ -1,0 +1,5 @@
+"employeeEmail";"employeePassword";"stocksFolderAccess";"bondsFolderAccess";"moneyFolderAccess"
+"bruce.jones@employee.com";"1234";0;1;0
+"happy.grace@employee.com";"1234";0;0;2
+"john.bean@employee.com";"1234";2;2;2
+"maggie.north@employee.com";"1234";1;0;0

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+		<style>
+			table {
+				position: absolute;
+  				left: 50%;
+  				top: 50%;
+  				transform: translate(-50%, -50%);
+			}
+			th, td {
+  				padding: 10px;
+			}
+			th {
+    			text-align: right;
+			}
+			.button {
+  				background-color: darkblue;
+			  	border: none;
+				color: white;
+				padding: 3px 10px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 24px;
+				font-family: consolas;
+				margin: 4px 2px;
+				cursor: pointer;
+			}
+			body {
+  				background-color: blue;
+			}
+			footer, header {
+  				color: white;
+  				font-family: consolas;
+  				text-align: center;
+  				font-size: 24px;
+			}
+		</style>
+</head>
+<body>
+<header><form action="userLogin.jsp" method="post">
+	<table>
+	<tr><th>User ID:</th><th style="text-align: left;"><input type="text" name="employeeEmail" required/></th></tr>
+	<tr><th>Password:</th><th style="text-align: left;"><input type="password" name="employeePassword"/></th></tr>
+	<tr><th colspan="2" style="text-align:center;"><input type="submit" class="button" value="Login"/></th></tr>
+	</table>
+</form></header>
+</body>
+</html>
