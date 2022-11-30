@@ -60,6 +60,7 @@
 		<h2>You are logged in as <%= request.getAttribute("employeeEmail")%>!<br></h2>
 		<p><b><u>Folders</u></b></p>		
 		<%@ page import="java.io.File" %>
+		<%@ page import="org.apache.commons.fileupload.*,org.apache.commons.fileupload.disk.*,org.apache.commons.fileupload.servlet.*" %>
 		<% 
 		if (Boolean.TRUE == request.getAttribute("stocksFolderRead")) 
 		{ 
@@ -68,7 +69,7 @@
 		<ul>
 		<%
 		// Display stocks folder
-			String foldersPath = "C:\\Users\\adria\\eclipse-workspace-java\\CSC206_Group_Lab\\src\\main\\webapp\\WEB-INF\\employeeFolders\\stocksFolder";
+			String foldersPath = "E:\\Users\\Benihime\\Documents\\Programming\\CSC206\\Group Lab\\CSC206_Project\\group project\\src\\main\\webapp\\WEB-INF\\employeeFolders\\stocksFolder";
 			File folder = new File(foldersPath);
 			String [] fileNames = folder.list();
 			File [] folderItems = folder.listFiles();
@@ -90,6 +91,23 @@
 		<% 
 		}
 		%>
+		
+		<%
+		if (Boolean.TRUE == request.getAttribute("stocksFolderWrite"))
+		{
+		%>
+
+		<form method="POST" enctype="multipart/form-data" action="uploadStocks.jsp">
+		  File to upload: <br><br> <input type="file" name="upfile"><br/>
+		  <br/>
+		  <input type="submit" value="Upload" >
+		</form>
+		
+		<%
+		}
+		%>
+		
+		
 		<% 
 		if (Boolean.TRUE == request.getAttribute("bondsFolderRead")) 
 		{ 
@@ -97,8 +115,8 @@
 		<p>Bonds:</p>
 		<ul>
 		<%
-		// Display stocks folder
-			String foldersPath = "C:\\Users\\adria\\eclipse-workspace-java\\CSC206_Group_Lab\\src\\main\\webapp\\WEB-INF\\employeeFolders\\bondsFolder";
+		// Display bonds folder
+			String foldersPath = "E:\\Users\\Benihime\\Documents\\Programming\\CSC206\\Group Lab\\CSC206_Project\\group project\\src\\main\\webapp\\WEB-INF\\employeeFolders\\bondsFolder";
 			File folder = new File(foldersPath);
 			String [] fileNames = folder.list();
 			File [] folderItems = folder.listFiles();
@@ -117,9 +135,26 @@
 			}
 		%>
 		</ul>
-		<% 
+	<% 
 		}
 		%>
+
+		
+		<%
+		if (Boolean.TRUE == request.getAttribute("bondsFolderWrite"))
+		{
+		%>
+
+		<form method="POST" enctype="multipart/form-data" action="uploadBonds.jsp">
+		  File to upload: <br><br> <input type="file" name="upfile"><br/>
+		  <br/>
+		  <input type="submit" value="Upload">
+		</form>
+		
+		<%
+		}
+		%>
+		
 		<% 
 		if (Boolean.TRUE == request.getAttribute("moneyFolderRead")) 
 		{ 
@@ -127,8 +162,8 @@
 		<p>Money:</p>
 		<ul>
 		<%
-		// Display stocks folder
-			String foldersPath = "C:\\Users\\adria\\eclipse-workspace-java\\CSC206_Group_Lab\\src\\main\\webapp\\WEB-INF\\employeeFolders\\moneyFolder";
+		// Display money folder
+			String foldersPath = "E:\\Users\\Benihime\\Documents\\Programming\\CSC206\\Group Lab\\CSC206_Project\\group project\\src\\main\\webapp\\WEB-INF\\employeeFolders\\moneyFolder";
 			File folder = new File(foldersPath);
 			String [] fileNames = folder.list();
 			File [] folderItems = folder.listFiles();
@@ -150,6 +185,23 @@
 		<% 
 		}
 		%>
+		
+		<%
+		if (Boolean.TRUE == request.getAttribute("moneyFolderWrite"))
+		{
+		%>
+
+		<form method="POST" enctype="multipart/form-data" action="uploadMoney.jsp">
+		  File to upload: <br><br> <input type="file" name="upfile"><br/>
+		  <br/>
+		  <input type="submit" value="Upload">
+		</form>
+		
+		<%
+		}
+		%>
+		
+		
 		<h3>
 		</h3>
 	</body>
